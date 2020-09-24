@@ -2,7 +2,7 @@
 // Created by Alperen on 24.09.2020.
 //
 
-#include "stack.h"
+#include "../include/stack.h"
 
 struct Stack* BuildStack(){
     struct Stack* stack = (struct Stack*) malloc(sizeof(struct Stack));
