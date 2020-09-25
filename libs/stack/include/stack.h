@@ -20,10 +20,10 @@ struct Stack{
 struct Stack* BuildStack();
 
 /**
- *
+ * @brief   Destructor function for stack
  * @param stack
- * @return
  */
+void DestroyStack(struct Stack* stack);
  /**
   * @brief          Checks stack whether it is full or not
   * @param          stack

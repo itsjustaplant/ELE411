@@ -19,6 +19,12 @@ struct Queue{
 struct Queue* BuildQueue();
 
 /**
+ * @brief     Destructor function for stack
+ * @param queue
+ */
+void DestroyQueue(struct Queue* queue);
+
+/**
  * @brief  Checks if queue is full
  * @param  queue
  * @return int 1 if queue full, 0 if not

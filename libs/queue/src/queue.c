@@ -9,7 +9,11 @@ struct Queue* BuildQueue(){
     queue -> index = 0;
     return queue;
 }
-
+void DestroyQueue(struct Queue* queue){
+    //Free buffer first to avoid "use after free"
+    free(queue -> buffer);
+    free(queue);
+}
 static int isQueueFull(struct Queue* queue){
     int r_value = 0;
     if (queue -> index == 10){

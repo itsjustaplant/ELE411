@@ -11,6 +11,12 @@ struct Stack* BuildStack(){
     return stack;
 }
 
+void DestroyStack(struct Stack* stack){
+    //Free buffer to avoid "use after free"
+    free(stack -> buffer);
+    free(stack);
+}
+
 int isStackFull(struct Stack* stack){
     int r_value = 0;
     if(stack -> index == STACK_SIZE){
@@ -20,6 +26,7 @@ int isStackFull(struct Stack* stack){
     }
     return r_value;
 }
+
 int isStackEmpty(struct Stack* stack){
     int r_value = 0;
     if (stack -> index == 0){
@@ -29,6 +36,7 @@ int isStackEmpty(struct Stack* stack){
     }
     return r_value;
 }
+
 void Push(int block, struct Stack* stack){
     int* s_index = &(stack -> index);
     if (isStackFull(stack)){
@@ -37,8 +45,8 @@ void Push(int block, struct Stack* stack){
     } else{
         printf("stack is full\n");
     }
-
 }
+
 void Pop(struct Stack* stack){
 
     int* s_index = &(stack -> index);
